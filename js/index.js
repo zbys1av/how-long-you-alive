@@ -6,18 +6,23 @@ const countdown = document.getElementById("countdown");
 const date = document.getElementById("date");
 const loading = document.getElementById("loading");
 
-const newYearTime = new Date(`September 12 2001 00:00:00`);
+function changeDate(){
+  let myDate = new Date(document.querySelector('.newDate').valueAsNumber);
+  const newYearTime = new Date(myDate);
+  return newYearTime;
+}
 
 //background year
 document.querySelector('.date').innerText = new Date().toLocaleDateString();
+// const startDate = new Date(document.querySelector('.newDate').valueAsNumber);
 
 //update time
 function updateCountdown() {
   const currentTime = new Date();
-  const diff = currentTime - newYearTime;
+  const diff = currentTime - changeDate();
 
   const d = Math.floor(diff / 1000 / 60 / 60 / 24);
-  const h = Math.floor(diff / 1000 / 60 / 60) % 24;
+  const h = 1 + Math.floor(diff / 1000 / 60 / 60) % 24;
   const m = Math.floor(diff / 1000 / 60) % 60;
   const s = Math.floor(diff / 1000) % 60;
 
