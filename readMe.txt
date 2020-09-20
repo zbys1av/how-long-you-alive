@@ -1,1 +1,1 @@
-https://zebestlove.github.io/how-long-you-alive/
+https://zbys1av.github.io/how-long-you-alive/
